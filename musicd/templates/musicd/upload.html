@@ -1,0 +1,12 @@
+{% extends "musicd/layout.html" %}
+
+{% block title %}Harmonica Upload{% endblock %}
+
+{% block content %}
+<h2>Upload a new Track</h2>
+<form enctype="multipart/form-data" method="post" action="{% url 'upload'%}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Upload">
+</form>
+{% endblock %}
