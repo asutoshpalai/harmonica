@@ -9,14 +9,8 @@
 <div class="musiclist">
   <ul>
     {% for track in tracks_list %}
-    <li>
-      <div class="track">
-        <h2 class="track-title">{{ track.title }}</h2>
-        <span class="track-artist">{{ track.artist }}</span><br>
-        <span class="track-album">{{ track.album }}</span><br>
-        <span class="track-genre">{{ track.genre }}</span><br>
-        <span class="track-download"><a target="_blank" href="{{ track.uploaded.url }}">Download</a></span>
-      </div>
+    <li id="track{{ track.id }}">
+      {% include "musicd/track.html" %}
     </li>
     {% endfor %}
   </ul>

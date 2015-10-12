@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
-from .models import Track
+from .models import Track, Vote
 from .forms import TrackForm
 
 def index(request):
@@ -9,8 +10,8 @@ def index(request):
     print(len(tracks))
     return render(request, 'musicd/index.html', { 'tracks_list': tracks })
 
+@login_required
 def upload(request):
-    print(request.method)
     if request.method == 'POST':
         form = TrackForm(request.POST, request.FILES)
         if form.is_valid():
@@ -21,3 +22,21 @@ def upload(request):
         form = TrackForm()
     return render(request, 'musicd/upload.html', {'form': form})
 
+@login_required
+def vote(request):
+    if request.method == 'POST':
+        # print(request.POST.vote)
+        print(request.POST['track'])
+        track_id = request.POST['track']
+        track = Track.objects.get(pk=track_id)
+        vote = request.POST['vote']
+        user = request.user
+        if 1 <= int(vote) <= 5 and track is not None:
+            v = Vote.objects.create(track=track, user=user, vote=vote)
+            return HttpResponse('Vote Successful')
+        else:
+            return HttpResponse('Icorrect Data')
+
+    else:
+        return HttpResponse('Incorrect HTTP METHOD')
+    return HttpResponse('Vote Falied')

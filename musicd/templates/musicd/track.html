@@ -1,0 +1,27 @@
+<div class="track">
+  <h2 class="track-title">{{ track.title }}</h2>
+  <span class="track-artist">{{ track.artist }}</span><br>
+  <span class="track-album">{{ track.album }}</span><br>
+  <span class="track-genre">{{ track.genre }}</span><br>
+  Ratting: <span class="votes">{{ track.rate }}</span><br>
+  {% if user.is_authenticated %}
+  <form class="vote" action="{% url 'musicd:vote' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" id="track_id" value="{{ track.id }}" name="track">
+    Your Ratting:
+    <select name="vote">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <select>
+        <input type="submit" value="Rate">
+  </form>
+  {% else %}
+    <p>Please login to vote</p>
+  {% endif %}
+
+  <span class="track-download"><a target="_blank" href="{{ track.uploaded.url }}">Download</a></span>
+</div>
+
