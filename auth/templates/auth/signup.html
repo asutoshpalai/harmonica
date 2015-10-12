@@ -1,0 +1,14 @@
+{% extends "musicd/layout.html" %}
+
+{% block title %}Harmonical Signup{% endblock %}
+
+{% block content %}
+<div class="signup">
+
+  <form class="signup-form" action="{% url 'auth:signup' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="signup">
+  </form>
+</div>
+{% endblock %}

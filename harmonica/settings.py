@@ -56,7 +56,7 @@ ROOT_URLCONF = 'harmonica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/musicd/templates'],
+        'DIRS': ['/musicd/templates', 'auth/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,3 +117,5 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 MEDIA_ROOT = 'uploads'
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/auth/login'

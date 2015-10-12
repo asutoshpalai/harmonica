@@ -7,6 +7,16 @@
 <body>
 <h1 class="title">Harmonica <span class="small">A online music directory</span></h1>
 
+<div class="auth">
+  {% if user.is_authenticated %}
+  <p class="username">Welcome, {{ user.username  }}.</p>
+  <p class="logout"><a href="{% url 'auth:logout' %}">Logout</a></p>
+  
+  {% else %}
+  <p>Welcome, new user. Please <a href="{% url 'auth:login' %}">log in</a>, or <a href="{% url 'auth:signup' %}">signup.</a> </p>
+  {% endif %}
+</div>
+
 <div class="main">
 
   {% block content %}
