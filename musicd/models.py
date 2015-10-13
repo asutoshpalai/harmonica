@@ -17,8 +17,6 @@ class Track(models.Model):
 
         return sum/(count if (count != 0) else 1)
 
-
-
     def __str__(self):
         return self.title + ' - ' + self.artist
 
@@ -31,3 +29,7 @@ class Vote(models.Model):
     user = models.ForeignKey(User)
     vote = models.IntegerField(choices=VOTES)
 
+class Comment(models.Model):
+    track = models.ForeignKey(Track)
+    user = models.ForeignKey(User)
+    comment = models.CharField(max_length=1000)

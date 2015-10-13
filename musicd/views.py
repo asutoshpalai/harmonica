@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from .models import Track, Vote
+from .models import Track, Vote, Comment
 from .forms import TrackForm
 
 def index(request):
@@ -40,3 +40,19 @@ def vote(request):
     else:
         return HttpResponse('Incorrect HTTP METHOD')
     return HttpResponse('Vote Falied')
+
+@login_required
+def comment(request):
+    if request.method == 'POST':
+        track_id = request.POST['track']
+        track = Track.objects.get(pk=track_id)
+        comment = request.POST['comment']
+        user = request.user
+        if comment and track is not None:
+            v = Comment.objects.create(track=track, user=user, comment=comment)
+            return HttpResponse('Comment Added')
+        else:
+            return HttpResponse('Icorrect Data')
+    else:
+        return HttpResponse('Incorrect HTTP METHOD')
+    return HttpResponse('Comment Falied')
