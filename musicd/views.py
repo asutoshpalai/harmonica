@@ -50,7 +50,7 @@ def comment(request):
         user = request.user
         if comment and track is not None:
             v = Comment.objects.create(track=track, user=user, comment=comment)
-            return HttpResponse('Comment Added')
+            return render(request, 'musicd/track.html', {'track': track})
         else:
             return HttpResponse('Icorrect Data')
     else:

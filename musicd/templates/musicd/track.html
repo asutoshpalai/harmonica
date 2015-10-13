@@ -27,7 +27,7 @@
       <select>
       <input type="submit" value="Rate">
   </form>
-  <form action="{% url 'musicd:comment' %}" method="post">
+  <form class="comment" action="{% url 'musicd:comment' %}" method="post">
     {% csrf_token %}
     <input type="hidden" id="track_id" value="{{ track.id }}" name="track">
     <textarea id="comment{{ track.id }}" name="comment" cols="60" rows="3" placeholder="Comment on the track"></textarea><br>
