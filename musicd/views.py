@@ -33,7 +33,7 @@ def vote(request):
         user = request.user
         if 1 <= int(vote) <= 5 and track is not None:
             v = Vote.objects.create(track=track, user=user, vote=vote)
-            return HttpResponse('Vote Successful')
+            return render(request, 'musicd/track.html', {'track': track})
         else:
             return HttpResponse('Icorrect Data')
 
