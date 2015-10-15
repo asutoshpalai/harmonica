@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACvUlEQVQ4T03ULVBjQQwH8KwuuquLLrpoigV0sYClWIoGLGABC9iCLeiiiwYNuuje/HKzN5eZN+17u/l/JNkty+Wy/vz8hNjd3Y1aa/4/PT2Nvb29WCwWcXFxEXd3dzGdTuPr6yteXl7i4eEh5H1/f8f29nb0+/0Yj8dR+v1+fXx8zIWbm5vodru5+Pb2Fre3t/kuocX5+Xn0er3Y2NiI+Xweo9EoJpNJDIfDWFtbi9LpdCplkina2tpK5o+PjxgMBv82U/b6+poAVK+vr8fh4WHyXF9f/9tXhsNhnc1mufnp6Sk3ke797OwsgSn5/f1NmxRTt7+/n2DL5TJLBfT5+fmvwqurq6wNsM/Pz2QHApAdqqyzBRChvRwhpliNE3A0GlXMkiVSwqrNkoUyUIVsc3MzH3WXo1TW1LXT6UTRZRswkS4At0QJ1EnwNNWIKfZY966ZZTKZVJ3DqA6CfKwIqGJbEgWsArHfHvabI2Uqq9WqWmg22ASg05JasrHSoJOTk2zE+/t7Nsm6oJCgMp/PKysWKAUsSbT5pKyNhiGn1oOEQrm+E5ODzZoPq9Uq7TbLVNok+eDgIEvwfzOMjgk5OjpKYA7KYDCobdYosdisOIZGQgm4ANDmtB1VzZSjIcjKdDpNQOHXR6y66ey2I+VbO3IAkLQG+m2nqCwWi9rOMWUA1RAYy22UNI46HUWiKUi9E7Kzs5Pfymw2q5eXl8l2fHyc8iUAt9FMqikFCNQTCCINFGZV0+wr4/G4mh83BVVtBICyCVTBBUUAvau3d8TyhZwSERWDLlugpMX9/X12lxWqzBoQYEpgzRGV33pQer1ebV2UQIEaaoBLoikAyqbHPsREAGXd/7wcut1uWlYDM6fwRoV8ie2IUaWeHpevG92vQKYpapwKSdaMBuTEWGzHEXi7TH1TfMqbTTOIkLs/Iw0wa35uQGEAAAAASUVORK5CYII=");
+}
+
+a {
+  text-decoration: none;
+  color: #015DBF;
+
+}
+
+h1.title {
+  background-color: #C33AB4;
+  margin: 0;
+  padding: .5em;
+  text-align: center;
+}
+
+h1.title .small {
+  font-size: 0.50em;
+  vertical-align: sub;
+}
+
+div.auth {
+  height: 2em;
+  background-color: #9C7CAF; 
+  padding: .5em;
+  text-align: right;
+}
+
+div.auth span, a.upload {
+  display: inline-block;
+  height: 100%;
+  line-height: 2em;
+  vertical-align: middle;
+  padding: 0 .2em;
+}
+
+div.auth .username {
+  color: red;
+  text-decoration: underlined;
+}
+
+div.auth .logout, a.upload {
+  background: #7C4FE4;
+  border-radius: .5em;
+  padding: 0 1em;
+}
+
+div.sidebar {
+  width: 19%;
+  padding-top: 2em;
+  padding-left: 1em;
+  float: left;
+}
+
+div.musiclist {
+  width: 79%;
+  float: left;
+}
+
+div.main:after {
+  content: " ";
+  clear: both;
+}
+
+div.main ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+div.track {
+  margin: 1em;
+  padding: 1em;
+  background: rgba(28, 80, 183, 0.43);;
+  border-radius: .5em;
+}
+
+div.track h2 {
+  text-decoration: underline;
+}
+
+li.comment {
+  margin: 0.5em;
+  padding: 1em;
+  background: rgba(50, 71, 113, 0.52);
+  border-radius: .5em;
+ 
+}
+
+li.comment .username{
+  text-decoration: underline;
+}

@@ -8,7 +8,7 @@
   <ul class="comments">
   {% for comment in track.comment_set.all %}
     <li class="comment">
-      <span class="username">{{ comment.user.username }}</span></br>
+      <span class="username">{{ comment.user.username }}:</span></br>
       <p class="comment">{{ comment.comment }}</p>
     </li>
   {% endfor %}
@@ -39,4 +39,3 @@
 
   <span class="track-download"><a target="_blank" href="{{ track.uploaded.url }}">Download</a></span>
 </div>
-

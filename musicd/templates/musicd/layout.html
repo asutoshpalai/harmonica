@@ -5,17 +5,18 @@
   <title>{% block title %}Harmonica{% endblock %}</title>
   <script src="/static/jquery-2.1.1.js"></script>
   <script src="/static/script.js"></script>
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
 <h1 class="title">Harmonica <span class="small">A online music directory</span></h1>
 
 <div class="auth">
   {% if user.is_authenticated %}
-  <p class="username">Welcome, {{ user.username  }}.</p>
-  <p class="logout"><a href="{% url 'auth:logout' %}">Logout</a></p>
+  <span>Welcome, <span class="username">{{ user.username  }}.</span></span>
+  <span class="logout"><a href="{% url 'auth:logout' %}">Logout</a></span>
   
   {% else %}
-  <p>Welcome, new user. Please <a href="{% url 'auth:login' %}">log in</a>, or <a href="{% url 'auth:signup' %}">signup.</a> </p>
+  <span>Welcome, new user. Please <a href="{% url 'auth:login' %}">log in</a>, or <a href="{% url 'auth:signup' %}">signup.</a> </span>
   {% endif %}
 </div>
 
